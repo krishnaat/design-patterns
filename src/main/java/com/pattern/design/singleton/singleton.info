@@ -1,0 +1,37 @@
+1. Definition : Singleton pattern ensures class has one and only one instance and provides global point of access to it.
+2. Singleton pattern with lazy initialization which is especially important for resource intensive objects.
+3. A class implementing Singleton pattern is more than singleton, it is a general purpose class with it's own set of data and methods.
+
+Singletons solve one (and only one) problem which is "Resource Contention"
+If you have some resource that
+   (1)can only have a single instance, and
+   (2) you need to manage that single instance,
+you need a singleton.
+There aren't many examples. A log file is the big one. You don't want to just abandon a single log file.
+You want to flush, sync and close it properly. This is an example of a single shared resource that has to be managed.
+
+
+Why Singleton is Anti pattern ?
+1. They carry state around for the lifetime of the application. Another hit to testing since you can end up with a situation
+    where tests need to be ordered which is a big no no for unit tests. Why? Because each unit test should be independent from the other.
+2. They inherently cause code to be tightly coupled.
+3. They are generally used as a global instance
+      a. why is that so bad? Because you hide the dependencies of your application in your code, instead of exposing them through the interfaces.
+         Making something global to avoid passing it around is a code smell.
+      b. Global is bad because:
+         3.b.1 It causes namespace conflict
+         3.b.2 It exposes the state in a unwarranted
+4. They violate the single responsibility principle: by virtue of the fact that they control their own creation and lifecycle.
+5. With more and more classes calling getInstance() the code gets more and more tightly coupled, monolithic, not testable
+   and hard to change and hard to reuse because of not configurable, hidden dependencies. Also, there would be no need for
+   the clumsy double checked locking if you call getInstance less often (i.e. once).
+6. One rather bad thing about singletons is that you can't extend them very easily.
+   You basically have to build in some kind of decorator pattern or some such thing if you want to change their behavior.
+7. If one day you want to have multiple ways of doing that one thing, it can be rather painful to change, depending on how you lay out your code.
+   It's fine to have only one instantiatiation but it's bad to restrict it because we may end up our assumptions being wrong while scaling the application.
+
+References : https://medium.com/@lovelydog/singleton-is-good-pathological-liars-6f0ff81e6f96
+             https://stackoverflow.com/questions/137975/what-is-so-bad-about-singletons?page=2&tab=active#tab-top
+
+
+
