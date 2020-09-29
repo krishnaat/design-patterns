@@ -14,10 +14,12 @@ public abstract class Beverage {
         MEDIUM("Medium"),
         SMALL("Small");
 
+//      TODO : Initialize this info, probably in constructor.
         @Getter
         private String bevarageSize;
 
-        private Size(String size){}
+        private Size(String size){
+        }
     };
 
     @Getter @Setter

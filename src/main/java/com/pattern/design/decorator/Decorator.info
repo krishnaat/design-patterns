@@ -1,0 +1,11 @@
+Use case : Designing a cafe like Starbucks.
+    1. Customers can order bevarages like Espresso/DarkRoast
+    2. For any bevarage, customer can opt for any number of flavours like Milk, Mocha, Soy
+    3. Each bevarage is available in 3 different options Tall, Medium, Small and costs can vary accordingly.
+    4. Cost of the additional condiment depends on the size of the bevarage glass.
+
+Features to be exposed.
+    a. Provide the description of the order.
+    b. Provide the cost of the order.
+
+Class Diagram of implemented solution is available at 'com.pattern.design.decorator' location with name `starbuzzClassDiagram.png`
