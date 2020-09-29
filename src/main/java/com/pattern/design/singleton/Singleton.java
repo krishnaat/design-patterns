@@ -1,5 +1,8 @@
 package com.pattern.design.singleton;
 
+import lombok.Getter;
+import lombok.Setter;
+
 /**
  * @Author : Krishna Murari, krishnamurari.at@gmail.com
  * This class provides an example of singleton pattern using lazy initialization.
@@ -15,6 +18,10 @@ public class Singleton {
      *  Private constructor ensures only Singleton can instantiate this class.
      */
     private Singleton(){}
+
+    @Getter
+    @Setter
+    private Integer value;
 
     /**
      * By using synchronized keyword, we force every thread to wait before it can enter the method.

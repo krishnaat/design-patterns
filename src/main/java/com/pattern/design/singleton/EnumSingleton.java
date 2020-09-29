@@ -1,5 +1,8 @@
 package com.pattern.design.singleton;
 
+import lombok.Getter;
+import lombok.Setter;
+
 /**
  *  @Author : Krishna Murari, krishnamurari.at@gmail.com
  *  This class provides an example of singleton pattern using "Enum"
@@ -12,12 +15,8 @@ public enum EnumSingleton {
 
     INSTANCE;
 
-    private int value;
+    @Getter
+    @Setter
+    private Integer value;
 
-    public int getValue() {
-        return value;
-    }
-    public void setValue(int value) {
-        this.value = value;
-    }
 }

@@ -1,5 +1,8 @@
 package com.pattern.design.singleton;
 
+import lombok.Getter;
+import lombok.Setter;
+
 /**
  * @Author : Krishna Murari, krishnamurari.at@gmail.com
  * This class provides an example of singleton pattern using "double checked locking" to reduce the use of synchronization in getInstance()
@@ -13,6 +16,10 @@ public class DoubleCheckedLockingSingleton {
      * volatile to prevent cache incoherence issues.
      */
     private volatile static DoubleCheckedLockingSingleton uniqueInstance;
+
+    @Getter
+    @Setter
+    private Integer value;
 
     private DoubleCheckedLockingSingleton(){}
 
